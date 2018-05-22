@@ -1,33 +1,116 @@
 ---
 name: Nordea
+x-slug: nordea
 description: The Nordeas Open Banking Initiative (OBI) API, offers a safe and simple
   way to try out the upcoming OBI. This API is a sandbox version, and its purpose
   is to make developers familiar with the upcoming OBI production release. Moreover,
   it allows the developers to experiment and build applications which use the OBI
-  before its official release.nbsp;
+  before its official release.
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
 x-kinRank: "8"
 x-alexaRank: ""
-tags:
-- UK Banks
-- ATMs
-created: "2018-03-22"
-modified: "2018-03-22"
-url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/apis.yaml
+tags: Nordea
+created: "2018-05-22"
+modified: "2018-05-22"
+url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/apis.md
 specificationVersion: "0.14"
 apis:
-- name: Nordea
-  description: The Nordeas Open Banking Initiative (OBI) API, offers a safe and simple
-    way to try out the upcoming OBI
+- name: Nordea List accounts
+  x-api-slug: nordea
+  description: Get accounts
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
-  humanURL: ""
-  baseURL: https://api.nordeaopenbanking.com/v2/
-  tags:
-  - UK Banks
-  - ATMs
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///accounts
+  tags: Accounts
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accounts-get-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accounts-get-openapi.md
+- name: Nordea Get account details by account id
+  x-api-slug: nordea
+  description: Get accounts account
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///accounts/{accountId}
+  tags: Accounts, Account
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accountsaccountid-get-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accountsaccountid-get-openapi.md
+- name: Nordea Get account transactions
+  x-api-slug: nordea
+  description: Get accounts account transactions
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///accounts/{accountId}/transactions
+  tags: Accounts, Account, Transactions
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accountsaccountidtransactions-get-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/accountsaccountidtransactions-get-openapi.md
+- name: Nordea Get all payments
+  x-api-slug: nordea
+  description: Get a list of all payments created for the user
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///payments/sepa
+  tags: Payments, Sepa
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepa-get-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepa-get-openapi.md
+- name: Nordea Initiate payment
+  x-api-slug: nordea
+  description: Post payments
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///payments/sepa
+  tags: Payments, Sepa
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/payments-sepa-paymentid-confirm-put.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepa-post-openapi.md
+- name: Nordea Get payment
+  x-api-slug: nordea
+  description: Get v2 payments sepa payment
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///payments/sepa/{paymentId}
+  tags: Payments, Sepa, Payment
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepapaymentid-get-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepapaymentid-get-openapi.md
+- name: Nordea Confirm payment
+  x-api-slug: nordea
+  description: Start the payment confirmation flow for a payment by payment id
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2///payments/sepa/{paymentId}/confirm
+  tags: Payments, Sepa, Payment, Confirm
+  properties:
+  - type: x-postman-collection
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepapaymentidconfirm-put-postman.md
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/paymentssepapaymentidconfirm-put-openapi.md
+- name: Nordea
+  x-api-slug: nordea
+  description: The Nordeas Open Banking Initiative (OBI) API, offers a safe and simple
+    way to try out the upcoming OBI. This API is a sandbox version, and its purpose
+    is to make developers familiar with the upcoming OBI production release. Moreover,
+    it allows the developers to experiment and build applications which use the OBI
+    before its official release.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nordea-bank-logo.png
+  humanURL: https://nordeaopenbanking.com
+  baseURL: https://api.nordeaopenbanking.com/v2/
+  tags: Nordea
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/nordea/master/_listings/nordea/openapi.md
 x-common:
 - type: x-blog
   url: https://medium.com/@NordeaOpenBanking
